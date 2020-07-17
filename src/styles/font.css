@@ -1,0 +1,7 @@
+@font-face {
+  font-family: "Yoon 윤고딕";
+  font-display: swap;
+  src: local("Yoon 윤고딕"), local("YoonGothicPro750"),
+    url("/fonts/YoonGothicPro750.woff") format("woff"),
+    url("/fonts/YoonGothicPro750.otf") format("opentype");
+}
