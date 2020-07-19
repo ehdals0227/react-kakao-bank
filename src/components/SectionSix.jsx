@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import classNames from "classnames";
 import styled from "styled-components";
 import { gray, white } from "../util/color";
 
@@ -16,6 +17,20 @@ const SectionContainer = styled.section`
   }
   .section-wrap > img {
     width: 408px;
+    opacity: 0;
+  }
+  .section-wrap > img.fly {
+    animation: fly 2s forwards;
+  }
+  @keyframes fly {
+    from {
+      margin-top: 300px;
+      opacity: 0;
+    }
+    to {
+      margin-top: 0;
+      opacity: 1;
+    }
   }
 `;
 
@@ -56,10 +71,24 @@ const ContentWrap = styled.div`
 `;
 
 const SectionSix = () => {
+  const [playAnimate, setPlayAnimate] = useState(false);
+  const handleScroll = () => {
+    const offset = window.scrollY || window.pageYOffset;
+    if (offset > 3400) return setPlayAnimate(true);
+  };
+
+  useEffect(() => {
+    document.addEventListener("scroll", handleScroll);
+    return () => document.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
     <SectionContainer>
       <div className="section-wrap">
-        <img src="/images/main-foreignRemittance.png" alt="" />
+        <img
+          className={classNames({ fly: playAnimate })}
+          src="/images/main-foreignRemittance.png"
+          alt=""
+        />
         <div className="content">
           <ContentWrap>
             <h3>
