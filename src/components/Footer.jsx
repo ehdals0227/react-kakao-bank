@@ -17,9 +17,6 @@ const FooterServiceList = styled.ul`
   display: flex;
   li {
     display: flex;
-    align-items: center;
-    font-size: 12px;
-    color: ${gray[1]};
   }
   li:after {
     content: "";
@@ -29,10 +26,19 @@ const FooterServiceList = styled.ul`
     margin: 0 15px 2px;
     background-color: #d8d8d8;
   }
+  li > a {
+    align-items: center;
+    font-size: 12px;
+    color: ${gray[1]};
+    text-decoration: none;
+  }
+  li > a:hover {
+    text-decoration: underline;
+  }
   li:last-child:after {
     display: none;
   }
-  li.black {
+  li.black a {
     color: ${black};
   }
 `;
@@ -148,7 +154,7 @@ const Footer = () => {
               key={i}
               className={classNames({ black: list.fontColor === "black" })}
             >
-              {list.title}
+              <a href="/">{list.title}</a>
             </li>
           ))}
         </FooterServiceList>
