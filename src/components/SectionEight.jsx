@@ -97,6 +97,28 @@ const NextArrow = styled.button`
 `;
 
 const SectionEight = () => {
+  const CheckcardList = [
+    {
+      image: "/images/card-1.png",
+      alt: "믿음직스러운 사자, 라이언 체크카드",
+    },
+    {
+      image: "/images/card-2.png",
+      alt: "애교만점 복숭아, 어피치 체크카드",
+    },
+    {
+      image: "/images/card-3.png",
+      alt: "토끼 옷을 입은, 무지 체크카드",
+    },
+    {
+      image: "/images/card-4.png",
+      alt: "작은 악어를 닮은, 콘 체크카드",
+    },
+    {
+      image: "/images/card-5.png",
+      alt: "캐릭터 없이 시크한, 블랙 체크카드",
+    },
+  ];
   return (
     <SectionContainer>
       <div className="section-wrap">
@@ -129,26 +151,9 @@ const SectionEight = () => {
               prevArrow={<PrevArrow />}
               nextArrow={<NextArrow />}
             >
-              <img
-                src="/images/card-1.png"
-                alt="믿음직스러운 사자, 라이언 체크카드"
-              />
-              <img
-                src="/images/card-2.png"
-                alt="애교만점 복숭아, 어피치 체크카드"
-              />
-              <img
-                src="/images/card-3.png"
-                alt="토끼 옷을 입은, 무지 체크카드"
-              />
-              <img
-                src="/images/card-4.png"
-                alt="작은 악어를 닮은, 콘 체크카드"
-              />
-              <img
-                src="/images/card-5.png"
-                alt="캐릭터 없이 시크한, 블랙 체크카드"
-              />
+              {CheckcardList.map((list, i) => (
+                <img key={i} src={list.image} alt={list.alt} />
+              ))}
             </Slider>
           </ContentWrap>
         </div>
