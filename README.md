@@ -1,6 +1,8 @@
 react-kakao-bank
+===
 
 Create-React-App(CRA)를 이용한 카카오뱅크 메인페이지 Copy
+---
 
 <div>
 <img src="https://user-images.githubusercontent.com/41315934/87879831-0a633d80-ca28-11ea-85f5-1ff92fb98abe.png" width="300">
