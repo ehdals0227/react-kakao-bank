@@ -32,11 +32,11 @@ const ContentWrap = styled.div`
   padding: 215px 0 0 90px;
   text-align: left;
   h3 {
-    font-size: 50px;
+    font-size: 49px;
     line-height: 1.25em;
   }
   p {
-    font-size: 18px;
+    font-size: 17px;
     line-height: 1.5em;
     margin-top: 20px;
   }
@@ -78,9 +78,8 @@ const DownloadLink = styled.ul`
     background-position: -371px -292px;
   }
   li a .link-title {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
-    margin-top: 4px;
   }
 `;
 

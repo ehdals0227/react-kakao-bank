@@ -42,7 +42,7 @@ const ContentWrap = styled.div`
     justify-content: center;
     width: 158px;
     height: 56px;
-    font-size: 18px;
+    font-size: 16px;
     background-color: ${gray[4]};
     border-radius: 10px;
     text-decoration: none;
