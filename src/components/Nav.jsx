@@ -3,6 +3,7 @@ import classNames from "classnames";
 import { main, white, black } from "../util/color";
 import styled from "styled-components";
 import { navigationMenuList } from "../util/navMenu";
+import BasicModal from "./BasicModal";
 
 const Navigation = styled.nav`
   position: fixed;
@@ -55,7 +56,13 @@ const Menu = styled.ul`
   li a:hover {
     text-decoration: underline;
   }
-  li.send-document span {
+  li.send-document > button {
+    font-size: 15px;
+    font-weight: 700;
+    background: none;
+    cursor: pointer;
+  }
+  li.send-document > button > span {
     display: inline-block;
     background-color: ${main[0]};
     border: 1px solid ${main[0]};
@@ -109,6 +116,7 @@ const SubNavigation = styled.div`
 
 const Nav = () => {
   const [hoverMenu, setHoverMnue] = useState(null);
+  const [showBadModal, setShowBadModal] = useState(false);
   return (
     <Navigation>
       <div className="nav-wrap" onMouseLeave={() => setHoverMnue(null)}>
@@ -138,9 +146,16 @@ const Nav = () => {
             <a href="https://kakaobank.com/">이벤트</a>
           </li>
           <li className="send-document" onMouseEnter={() => setHoverMnue(null)}>
-            <a href="https://kakaobank.com/">
+            <button type="button" onClick={() => setShowBadModal(true)}>
               <span>서류제출하기</span>
-            </a>
+            </button>
+            {showBadModal && (
+              <BasicModal
+                lineOne="죄송합니다."
+                lineTwo="현재 가능한 서비스가 없습니다."
+                onClose={() => setShowBadModal(false)}
+              />
+            )}
           </li>
         </Menu>
         {hoverMenu && (
