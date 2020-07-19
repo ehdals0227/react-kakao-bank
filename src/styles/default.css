@@ -8,6 +8,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+::selection {
+  background: #fede22;
+}
+
 .alt-text {
   position: absolute;
   overflow: hidden;

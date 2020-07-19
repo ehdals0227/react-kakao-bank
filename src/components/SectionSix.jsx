@@ -66,7 +66,6 @@ const ContentWrap = styled.div`
     width: 6px;
     height: 9px;
     margin-left: 8px;
-    margin-bottom: 2px;
   }
 `;
 
